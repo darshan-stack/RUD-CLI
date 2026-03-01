@@ -396,7 +396,7 @@ pub async fn cmd_remediate(state: Arc<SharedState>, dry_run: bool, node: Option<
     println!();
 
     for anomaly in &unresolved {
-        let proposal = nexus.analyze(anomaly, &state);
+        let proposal = nexus.analyze(anomaly, &state).await;
         println!("  anomaly  : {} ({}/{})", anomaly.node_name, anomaly.kind, anomaly.severity);
         println!("  action   : {}", proposal.action);
         println!("  rationale: {}", proposal.rationale);

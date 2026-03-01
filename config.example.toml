@@ -1,0 +1,85 @@
+# RUD-CLI Configuration Example
+# Save this file as ~/.config/rud/config.toml
+
+[daemon]
+pid_file = "/tmp/rud.pid"
+socket_path = "/tmp/rud.sock"
+log_level = "info"  # trace, debug, info, warn, error
+log_file = "/tmp/rud.log"
+telemetry_interval_ms = 1000
+
+[aether]
+qds_shard_count = 8
+qds_shard_size_mb = 64
+qds_path = "/tmp/rud_qds"
+nre_worker_threads = 4
+
+[ghost]
+# Chaos Anomaly Detector settings
+cad_window_size = 100
+cad_z_score_threshold = 3.0
+cad_learning_period_secs = 30
+
+# Echo Simulation Mirror settings
+esm_tick_ms = 50
+
+# Nexus Remediation Engine
+nexus_enabled = true
+
+[tui]
+refresh_rate_ms = 100
+max_log_lines = 1000
+max_metric_history = 300
+
+[discovery]
+# Enable/disable protocol discovery
+enable_ros2 = true
+enable_zenoh = true
+enable_mqtt = true
+
+# Discovery settings
+scan_interval_secs = 30
+use_real_discovery = true  # Set to false for mock/simulation mode
+
+# ROS2/DDS settings
+ros_domain_id = 0  # Optional: defaults to ROS_DOMAIN_ID env var
+
+# MQTT settings
+mqtt_broker = "localhost"
+mqtt_port = 1883
+
+[monitoring]
+# Prometheus metrics export
+enable_prometheus = false
+prometheus_port = 9090
+
+# OpenTelemetry tracing
+enable_opentelemetry = false
+otel_endpoint = "http://localhost:4317"
+
+# Metrics retention
+metrics_retention_secs = 3600
+
+[llm]
+# Enable AI-powered remediation
+enabled = false
+provider = "openai"  # Options: "openai", "anthropic", "local"
+model = "gpt-4"
+
+# API key (recommended to set via environment variable instead)
+# api_key = "sk-..."
+
+# For local LLM (Ollama, LM Studio, etc.)
+# api_url = "http://localhost:11434/api/generate"
+
+timeout_secs = 30
+
+[security]
+# TLS/SSL configuration
+enable_tls = false
+# cert_file = "/path/to/cert.pem"
+# key_file = "/path/to/key.pem"
+# ca_file = "/path/to/ca.pem"
+
+# Authentication
+require_auth = false

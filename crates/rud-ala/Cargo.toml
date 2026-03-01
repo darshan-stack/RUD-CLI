@@ -18,3 +18,15 @@ sysinfo = { workspace = true }
 rand = { workspace = true }
 parking_lot = { workspace = true }
 dashmap = { workspace = true }
+zenoh = { version = "1.0", features = ["shared-memory", "unstable"], optional = true }
+rumqttc = { version = "0.24", optional = true }
+# cyclonedds-rs = { version = "0.4", optional = true }
+bytes = { workspace = true }
+base64 = "0.22"
+
+[features]
+default = []
+full-discovery = ["zenoh", "rumqttc"]
+# ros2 = ["cyclonedds-rs"]  # Disabled due to build complexity
+zenoh-discovery = ["zenoh"]
+mqtt = ["rumqttc"]

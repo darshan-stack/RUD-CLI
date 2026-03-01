@@ -235,8 +235,14 @@ fn run_remediate(app: &AppState, state: &SharedState) {
         if let Some(anomaly) = anomalies.get(rev_idx) {
             let anomaly = anomaly.clone();
             drop(anomalies);
+            // Note: Using sync policy-based remediation in TUI (LLM disabled for interactive mode)
             let mut nexus = rud_ghost::nexus::NexusRemediationEngine::new();
-            nexus.analyze(&anomaly, state);
+            // Use tokio::task::block_in_place to run async in sync context
+            tokio::task::block_in_place(|| {
+                tokio::runtime::Handle::current().block_on(async {
+                    let _ = nexus.analyze(&anomaly, state).await;
+                })
+            });
         }
     }
 }
