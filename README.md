@@ -2,7 +2,7 @@
 
 A production-grade, real-time debugging and monitoring platform for heterogeneous robotics systems. RUD-CLI provides unified observability across ROS2/DDS, Zenoh, and MQTT protocols with AI-powered anomaly detection and automated remediation.
 
-## 🚀 Features
+##  Features
 
 ### Core Capabilities
 - **Multi-Protocol Discovery**: Real-time discovery of nodes across ROS2/DDS, Zenoh, and MQTT networks
@@ -19,7 +19,7 @@ A production-grade, real-time debugging and monitoring platform for heterogeneou
 - **Zenoh**: Peer discovery via scouting API
 - **MQTT**: Broker enumeration and topic discovery
 
-## 📦 Installation
+##  Installation
 
 ### Prerequisites
 - Rust 1.70+ (`rustup`)
@@ -41,7 +41,7 @@ cargo build --release --features prometheus
 cargo install --path crates/rud-cli
 ```
 
-## 🎯 Quick Start
+##  Quick Start
 
 ### 1. Basic Usage
 ```bash
@@ -129,7 +129,7 @@ export RUD_REAL_DISCOVERY=true
 export RUD_LOG_LEVEL=debug
 ```
 
-## 📊 Architecture
+##  Architecture
 
 ### System Components
 
@@ -169,7 +169,7 @@ export RUD_LOG_LEVEL=debug
 - **Echo Simulation Mirror (ESM)**: Digital twin for predictive monitoring
 - **Nexus Remediation Engine**: AI-powered root cause analysis and fixes
 
-## 🔧 Advanced Usage
+##  Advanced Usage
 
 ### Protocol Bridging
 
@@ -236,7 +236,7 @@ export MQTT_PORT=1883
 rud discover --protocol mqtt
 ```
 
-## 📈 Prometheus Metrics
+##  Prometheus Metrics
 
 When `enable_prometheus = true`, the following metrics are exposed on `:9090/metrics`:
 
@@ -254,7 +254,7 @@ When `enable_prometheus = true`, the following metrics are exposed on `:9090/met
 
 Example Grafana dashboard available in `docs/grafana-dashboard.json`.
 
-## 🔐 Security
+##  Security
 
 ### TLS/SSL Configuration
 
@@ -279,7 +279,7 @@ echo "$OPENAI_API_KEY" | rud config set-secret llm.api_key -
 export OPENAI_API_KEY=$(pass show openai/api-key)
 ```
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run all tests
@@ -295,7 +295,7 @@ cargo bench --workspace
 cargo clippy --workspace --all-targets --all-features
 ```
 
-## 📚 Examples
+##  Examples
 
 ### Example 1: Basic Monitoring
 
@@ -354,7 +354,7 @@ engine.add_custom_policy(|event| {
 });
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -378,24 +378,24 @@ cargo fmt --all
 cargo clippy --all-targets --all-features
 ```
 
-## 📝 License
+##  License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
-- Built with Rust 🦀
+- Built with Rust 
 - Uses CycloneDDS for ROS2 discovery
 - Powered by Eclipse Zenoh for high-performance pub/sub
 - AI reasoning via OpenAI and Anthropic APIs
 
-## 📞 Support
+##  Support
 
 - GitHub Issues: https://github.com/darshan-stack/RUD-CLI/issues
 - Documentation: https://rud-cli.readthedocs.io
 - Discord: https://discord.gg/rud-cli
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [ ] Support for additional protocols (OPC UA, Modbus)
 - [ ] Web-based dashboard UI
@@ -408,4 +408,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-**Made with ❤️ for the robotics community**
+**Made with  for the robotics community**

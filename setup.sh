@@ -12,7 +12,7 @@ echo "Building RUD-CLI..."
 cargo build --release
 
 echo ""
-echo "✓ Build complete!"
+echo " Build complete!"
 echo ""
 
 # Create config directory
@@ -23,7 +23,7 @@ mkdir -p "$CONFIG_DIR"
 if [ ! -f "$CONFIG_DIR/config.toml" ]; then
     echo "Creating default configuration..."
     cp config.example.toml "$CONFIG_DIR/config.toml"
-    echo "✓ Configuration created at $CONFIG_DIR/config.toml"
+    echo " Configuration created at $CONFIG_DIR/config.toml"
 fi
 
 echo ""
